@@ -1,0 +1,5 @@
+# Misc
+.DS_Store
+*.pyc
+github_backup.sh
+*.log
