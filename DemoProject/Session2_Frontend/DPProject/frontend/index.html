@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html>
+
+<!-- Header -->
+<header>
+
+  <!-- Dependencies -->
+
+  <!-- External (*To be added in in JS section)-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Internal (*To be added in in CSS / JS section)-->
+  <link rel=stylesheet type=text/css href="style.css">
+  <script type="text/javascript" src="function.js"></script>  
+
+</header>
+
+<!-- Body -->
+<body>
+
+    <!-- Overview of the website -->
+    <br> <br> <br>
+
+    <p><h1 align="center">As of April 23rd, more than 2,616,000 people have been sickened by COVID-19 <br>and at least 181,000 people have died</h1></p>
+
+    <br> <br> <br>
+    <hr>
+    <br> <br> <br>
+
+    <!-- Button to generate graph & placeholder for location & placeholder for graph -->
+    <div style="text-align:center">
+      
+      <button onclick="InitializeGraph()">See the number of infections and deaths in my area</button>
+
+      <br><br>
+
+      <div id="location" style="text-align:center"> </div>
+
+      <br><br>
+
+      <div id="chart" style="text-align:center"> </div>
+
+    </div>
+ 
+  
+</body>
+</html>
