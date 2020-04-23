@@ -16,8 +16,9 @@ cd DemoProject/Session2_Frontend/DPProject
 
 2. Launch the website
 ```
-python3 -m http.server 5000
+python3 -m http.server 5000 (mac)
+python -m http.server 5000 (windows)
 
 ```
 
-3. Open http://0.0.0.0:5000/ in your browser and navigate to frontend
+3. Open http://0.0.0.0:5000/ (*http://localhost:5000/ for windows*) in your browser and navigate to frontend
