@@ -1,10 +1,6 @@
 // Defining variables & arrays
 // ---------
-// 1. Define variables
-latitude = window.prompt("What longitude are you at?","e.g., -71.0987");
-longitude = window.prompt("What latitude are you at?","e.g., 42.3649");
-
-// 2. Define arrays
+// 1. Define arrays
 colors = ['#b0120a', '#ffab91']
 columns = ['Country', 'Infections', 'Deaths'];
 
