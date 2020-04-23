@@ -20,10 +20,13 @@ function InitializeGraph() {
   user_longitude = data.lon;
   user_latitude  = data.lat;
 
-  // Inspect the obtained data in the console
-  console.log(user_longitude)
-  console.log(user_latitude)
-
+  // Log the longitude and latitude to the console
+  console.log("Longitude: " + user_longitude)
+  console.log("Latitude: " + user_latitude)
+     
+  // Update the interface the user sees with their location
+  document.getElementById("location").innerHTML = "Your location:<br> Latitude: " + user_latitude + "<br>Longitude: " + user_longitude;
+  
   // Draw the graph
   // ** Note: Data is hard-coded > next step: Replace hard-coded data with an API call to the server, i.e., backend 
   // ** API call specification: Send to server: Longitude, latitude / Receive from server: Corresponding country, # of infections/deaths in that country

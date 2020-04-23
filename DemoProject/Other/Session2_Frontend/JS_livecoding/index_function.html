@@ -27,9 +27,12 @@
   // ---------
   function InitializeGraph(user_longitude = longitude, user_latitude=latitude) {
 
-    // Inspect input in the console
-    console.log(user_longitude)
-    console.log(user_latitude)
+    // Log the longitude and latitude to the console
+    console.log("Longitude: " + user_longitude)
+    console.log("Latitude: " + user_latitude)
+     
+    // Update the interface the user sees with their location
+    document.getElementById("location").innerHTML = "Your location:<br> Latitude: " + user_latitude + "<br>Longitude: " + user_longitude;
 
   }
 
