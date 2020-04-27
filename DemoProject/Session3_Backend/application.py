@@ -27,14 +27,6 @@ from DataProcessing import *
 # Test Functions
 # ------------------------------------------------------------------------ #
 
-# home
-# ---------------------------------------------#
-data = summary_corona_data()
-
-print(data[0])
-print(data[1])
-print(data[2])
-
 # update_owncountry
 # ---------------------------------------------#
 data = location_corona_data(longitude = -71.08328259999999, latitude = 42.3662154)
@@ -43,13 +35,6 @@ print(data[0])
 print(data[1])
 print(data[2])
 
-# update_selectcountry
-# ---------------------------------------------#
-data = location_corona_data(country = "Germany")
-
-print(data[0])
-print(data[1])
-print(data[2])
 
 # ------------------------------------------------------------------------ #
 # ------------------------------------------------------------------------ #

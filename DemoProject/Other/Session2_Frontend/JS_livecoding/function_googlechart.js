@@ -1,9 +1,3 @@
-// Defining variables & arrays
-// ---------
-// 1. Define arrays
-colors = ['#b0120a', '#ffab91']
-columns = ['Country', 'Infections', 'Deaths'];
-
 // Defining functions
 // ---------
 
@@ -41,12 +35,13 @@ function DrawGraph(country, infection, death) {
 
   // Generate and format the data
   var data = google.visualization.arrayToDataTable([
-    columns,[country, infection, death]
+    ['Country', 'Infections', 'Deaths'],
+    [country, infection, death]
   ]);
 
   // Customize the graph
   var options = {
-    colors: colors,
+    colors: ['#b0120a', '#ffab91'],
     chartArea: {width: '50%'},
     hAxis: {
       title: 'Number of infections and deaths'
@@ -60,3 +55,4 @@ function DrawGraph(country, infection, death) {
   chart.draw(data, options);
 
 }
+

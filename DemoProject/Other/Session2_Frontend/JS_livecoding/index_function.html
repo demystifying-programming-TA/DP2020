@@ -13,38 +13,15 @@
   <!-- Scripts -->
   <script type="text/javascript">
  
-  // Defining variables & arrays
-  // 1. Define variables
-
-  country = "United States"
-  infections = 852000
-  deaths = 43000
-
-  latitude = 42.3649
-  longitude = -71.0987
-
-  // Manipulate variables
-  x = longitude + 3
-  y = longitude + "United States"
-
-  // Inspect variables in the console
-  console.log(x)
-  console.log(y)
-
-  // 2. Define arrays
-  colorsList = ['#b0120a', '#ffab91']
-  columnsList = ['Country', 'Infections', 'Deaths'];
-
-  // Inspect arrays in the console
-  console.log(columnsList[1]);
-  
-
-  // 3. Defining functions
+  // Obtain data
   // ---------
-  
   latitude = window.prompt("What longitude are you at?","e.g., -71.0987");
   longitude = window.prompt("What latitude are you at?","e.g., 42.3649");
 
+  // Defining functions
+  // ---------
+
+  // InitializeGraph
   function InitializeGraph(user_longitude = longitude, user_latitude=latitude) {
 
     // Log the longitude and latitude to the console
