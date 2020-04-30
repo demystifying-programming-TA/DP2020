@@ -1,13 +1,15 @@
-.divselection {
- 
-  font-size:30px;
-  
+button {
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    font-weight: 100; 
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
-body {
- 
-  font-size:10px;
-  
+.graph-button:hover{
+    background: orange;
+    color: white;
+    text-align: center;
 }
-
-

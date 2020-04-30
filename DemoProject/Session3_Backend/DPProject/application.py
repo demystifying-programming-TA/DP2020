@@ -13,14 +13,10 @@
 # Initialization
 # ------------------------------------------------------------------------ #
 
-# Path
-# ---------------------------------------------#
-import os, sys
-app_root = os.path.normpath(os.path.dirname(os.path.abspath(__file__)))   
-
 # Load internal dependencies
 # ---------------------------------------------#
-sys.path.append(os.path.normpath(os.path.join(app_root,'Backend')))
+import os, sys
+sys.path.append('Backend')
 from DataProcessing import *
 
 # ------------------------------------------------------------------------ #
@@ -29,12 +25,19 @@ from DataProcessing import *
 
 # update_owncountry
 # ---------------------------------------------#
-data = location_corona_data(longitude = -71.08328259999999, latitude = 42.3662154)
 
-print(data[0])
-print(data[1])
-print(data[2])
-
+## Note: Try with US, Germany, UK
+for i in [[-71.08328259999999, 42.3662154],[10.48328259999999, 51.3662154],[-1.78328259999999, 52.4662154]]:
+	try:
+		long = i[0]
+		lat  = i[1]
+		data = location_mobility_data(longitude = long, latitude = lat)
+		print("Country name: ", data[0])
+		print("% decrease in walking: ",data[1])
+		print("% decrease in driving ",data[2])
+		
+	except:
+		print("Country not found.")
 
 # ------------------------------------------------------------------------ #
 # ------------------------------------------------------------------------ #

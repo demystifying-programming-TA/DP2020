@@ -34,13 +34,14 @@ from geopy.geocoders import Nominatim
 
 # location_corona_data
 # ---------------------------------------------#
-def location_corona_data(longitude=None, latitude=None , datapath = os.path.join(app_root, "Backend/Data/CoronaData.csv")):
+def location_mobility_data(longitude=None, latitude=None ,
+	datapath = os.path.join(app_root, "Backend/Data/CoronaData.csv")):
 
 	# Load the data
-	corona_df = pd.read_csv(datapath, encoding="utf-8")
+	mobility_df = pd.read_csv(datapath, encoding="utf-8")
 
 	# Geocode the longitude/latitude data if not provided with country
-	
+
 	## Initialize the geocoder
 	locator      = Nominatim(user_agent="myGeocoder")
 
@@ -49,15 +50,22 @@ def location_corona_data(longitude=None, latitude=None , datapath = os.path.join
 	geocode_data = locator.reverse(coordinates)
 	country      = geocode_data.raw['address']['country']
 
+	#####
 	# Subset to the location
-	corona_location_df = corona_df[corona_df["country"]==country]
+	mobility_location_df = mobility_df[mobility_df["region"]==country]
 
 	# Generate location-specific statistics
-	infection = int(np.sum(corona_location_df["infection"]))
-	death     = int(np.sum(corona_location_df["death"]))
+	driving = mobility_location_df[mobility_location_df["transportation_type"] == "driving"]
+	walking = mobility_location_df[mobility_location_df["transportation_type"] == "walking"]
+
+	walking_chg = 1 - walking.iloc[0,-1]/walking.iloc[0,3]
+	walking_chg = (walking_chg*100).round(decimals = 1)
+
+	driving_chg = 1 - driving.iloc[0,-1]/driving.iloc[0,3]
+	driving_chg = (driving_chg*100).round(decimals = 1)
 
 	# Return the summary statistics
-	return([infection, death, country])
+	return([country, walking_chg, driving_chg])
 
 # ------------------------------------------------------------------------ #
 # ------------------------------------------------------------------------ #
