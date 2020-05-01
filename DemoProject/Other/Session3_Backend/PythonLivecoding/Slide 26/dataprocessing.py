@@ -2,7 +2,7 @@
 
 # MobilityTracker
 
-# File:         application.py
+# File:         dataprocessing.py
 # Maintainer:   DP Team
 # Last Updated: 2020-04-13
 # Language:     Python 3.7
@@ -15,19 +15,21 @@
 
 # Load dependencies
 # ---------------------------------------------#
-import sys
-sys.path.append('Backend')
-import dataprocessing as dp
-
+import pandas as pd
 
 # ------------------------------------------------------------------------ #
-# Test Functions
+# Define Functions
 # ------------------------------------------------------------------------ #
 
-## Try the location_mobility_data() function
-## Note: Longitude,latitude refer to the United States
-print(dp.location_mobility_data(longitude = -71.08328259999999 , 
-	latitude = 42.3662154))
+
+# ------------------------------------------------------------------------ #
+# Analyze
+# ------------------------------------------------------------------------ #
+
+## Load the data
+mobility_df = pd.read_csv("backend/data/CoronaData.csv", 
+	encoding="utf-8")
 
 # ------------------------------------------------------------------------ #
 # ------------------------------------------------------------------------ #
+

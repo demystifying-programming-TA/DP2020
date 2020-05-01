@@ -44,13 +44,5 @@ def location_mobility_data(longitude, latitude):
 	return([country, walking_chg, driving_chg])
 
 # ------------------------------------------------------------------------ #
-# Analyze
-# ------------------------------------------------------------------------ #
-
-## Try the location_mobility_data() function
-## Note: Longitude,latitude refer to the United States
-print(location_mobility_data(longitude = -71.08328259999999 , latitude = 42.3662154))
-
-# ------------------------------------------------------------------------ #
 # ------------------------------------------------------------------------ #
 

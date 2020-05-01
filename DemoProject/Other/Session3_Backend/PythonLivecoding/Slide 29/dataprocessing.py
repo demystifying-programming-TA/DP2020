@@ -16,6 +16,7 @@
 # Load dependencies
 # ---------------------------------------------#
 import pandas as pd
+import geopy as gp
 
 # ------------------------------------------------------------------------ #
 # Define Functions
@@ -30,7 +31,10 @@ def location_mobility_data(longitude, latitude):
 		encoding="utf-8")
 
 	# Reverse geocode (longitude, latitude > country)
-	country = "United States"
+	locator      = gp.geocoders.Nominatim(user_agent="myGeocoder")       # Locator = object of class Nominatim
+	coordinates  = str(latitude) + ", " + str(longitude)    # Strings and integers/floats
+	geocode_data = locator.reverse(coordinates)             # Reverse is an attribute of Locator, i.e., the Nominatim class
+	country      = geocode_data.raw['address']['country']   # Dictionaries
 
 	# Extract data for country
 
