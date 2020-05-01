@@ -1,7 +1,8 @@
-# CoronaTracker
+# MobilityTracker
 
 ## Overview
-CoronaTracker is a website that provides users with information about the number of confirmed COVID cases and deaths in the country that the website visitor is located in. 
+
+MobilityTracker is a website that illustrates the decrease in mobility across the globe due to COVID-19. 
 
 ## Quickstart - Frontend
 

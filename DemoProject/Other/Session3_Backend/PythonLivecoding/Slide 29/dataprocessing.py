@@ -2,7 +2,7 @@
 
 # MobilityTracker
 
-# File:         application.py
+# File:         dataprocessing.py
 # Maintainer:   DP Team
 # Last Updated: 2020-04-13
 # Language:     Python 3.7
@@ -13,31 +13,36 @@
 # Initialization
 # ------------------------------------------------------------------------ #
 
-# Load internal dependencies
+# Load dependencies
 # ---------------------------------------------#
-import sys
-sys.path.append('backend')
-import dataprocessing as dp
+import pandas as pd
 
 # ------------------------------------------------------------------------ #
-# Test Functions
+# Define Functions
 # ------------------------------------------------------------------------ #
 
-# update_owncountry
-# ---------------------------------------------#
+# location_mobility_data
+# ----------------------------
+def location_mobility_data(longitude, latitude):
 
-## Note: Try with US, Germany, UK
-for i in [[-71.08328259999999, 42.3662154],[10.48328259999999, 51.3662154],[-1.78328259999999, 52.4662154]]:
-	try:
-		long = i[0]
-		lat  = i[1]
-		data = dp.location_mobility_data(longitude = long, latitude = lat)
-		print("Country name: ", data[0])
-		print("Decrease in # of walking calls (%): " + str(data[1]))
-		print("Decrease in # of driving calls (%):" + str(data[2]))
-		
-	except:
-		print("Country not found.")
+	# Load the data
+	mobility_df = pd.read_csv("backend/data/CoronaData.csv", 
+		encoding="utf-8")
+
+	# Reverse geocode (longitude, latitude > country)
+	country = "United States"
+
+	# Extract data for country
+
+	# Extract data for walking & calculate change in # of walking calls
+	walking_chg = 20
+	
+	# Extract data for driving & calculate change in # of driving calls
+	driving_chg = 30
+	
+	# Return the results
+	return([country, walking_chg, driving_chg])
 
 # ------------------------------------------------------------------------ #
 # ------------------------------------------------------------------------ #
+
