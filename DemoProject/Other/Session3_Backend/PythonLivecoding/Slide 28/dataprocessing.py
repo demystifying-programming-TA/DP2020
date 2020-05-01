@@ -30,7 +30,7 @@ def location_mobility_data(longitude, latitude):
 		encoding="utf-8")
 
 	# Reverse geocode (longitude, latitude > country)
-	country = "United States"
+	country = "United States of America"
 
 	# Extract data for country
 

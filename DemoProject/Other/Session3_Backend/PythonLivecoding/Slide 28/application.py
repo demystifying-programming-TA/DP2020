@@ -25,7 +25,11 @@ import dataprocessing as dp
 
 ## Try the location_mobility_data() function
 ## Note: Longitude,latitude refer to the United States
-print(dp.location_mobility_data(longitude = -71.08328259999999 , latitude = 42.3662154))
+data = dp.location_mobility_data(longitude = -71.08328259999999, 
+	latitude = 42.3662154)
+print("Country name: ", data[0])
+print("Decrease in # of walking calls (%): " + str(data[1]))
+print("Decrease in # of driving calls (%):" + str(data[2]))
 
 # ------------------------------------------------------------------------ #
 # ------------------------------------------------------------------------ #

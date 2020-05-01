@@ -37,15 +37,15 @@ def location_mobility_data(longitude, latitude):
 	country      = geocode_data.raw['address']['country']   # Dictionaries
 
 	# Extract data for country
-	mobility_location_df = mobility_df[mobility_df["Region"]==country]
+	mobility_location_df = mobility_df.loc[mobility_df["Region"]==country]
 
 	# Extract data for walking & calculate change in # of walking calls
-	walking     =  mobility_location_df[mobility_location_df["Transportation"] == "walking"]
+	walking     =  mobility_location_df.loc[mobility_location_df["Transportation"] == "walking"]
 	walking_chg = 1 - walking["Requests_4/14/2020"]/walking["Requests_1/13/2020"]
 	walking_chg = int(walking_chg*100)
 	
 	# Extract data for driving & calculate change in # of driving calls
-	driving     =  mobility_location_df[mobility_location_df["Transportation"] == "driving"]
+	driving     =  mobility_location_df.loc[mobility_location_df["Transportation"] == "driving"]
 	driving_chg = 1 - driving["Requests_4/14/2020"]/driving["Requests_1/13/2020"]
 	driving_chg = int(driving_chg*100)
 	
