@@ -31,7 +31,7 @@ for i in [[-71.08328259999999, 42.3662154],[10.48328259999999, 51.3662154],[-1.7
 		data = dp.location_mobility_data(longitude = long, latitude = lat)
 		print("Country name: ", data[0])
 		print("Decrease in # of walking calls (%): " + str(data[1]))
-		print("Decrease in # of driving calls (%):" + str(data[2]))
+		print("Decrease in # of driving calls (%): " + str(data[2]))
 		
 	except:
 		print("Country not found.")
