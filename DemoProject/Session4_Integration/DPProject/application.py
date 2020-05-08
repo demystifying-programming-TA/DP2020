@@ -43,7 +43,7 @@ def home_view():
 	return flask.render_template('index.html')
 	
 	
-# update_owncountry
+# update_country
 # ---------------------------------------------#
 @application.route('/update_country')
 def update_country_view():
@@ -63,8 +63,7 @@ def update_country_view():
 # ------------------------------------------------------------------------ #
 # Launch the  application
 # ------------------------------------------------------------------------ #
-if __name__ == "__main__":
-	application.run()
+application.run()
 
 # ------------------------------------------------------------------------ #
 # ------------------------------------------------------------------------ #
