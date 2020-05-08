@@ -6,9 +6,6 @@ MobilityTracker is a website that illustrates the decrease in mobility across th
 
 ## Quickstart - Frontend
 
-
-## Quickstart - Frontend
-
 ### Local
 
 1. Clone the repository
